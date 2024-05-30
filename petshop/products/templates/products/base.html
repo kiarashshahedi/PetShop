@@ -24,7 +24,7 @@
 
 <body>
     <!--add navbar page-->
-    {% include 'navbar.html' %}
+    {% include 'products/navbar.html' %}
 
     <!-- message container start-->
     <div id="message-container">
@@ -41,10 +41,11 @@
 
     <!--Block body-->
     <main>
-        {% block content %}{% endblock %}
+        {% block body %}{% endblock %}
     </main>
 
     <!-- FOOTER -->
+    {% include 'products/footer.html' %}
 
     <!-- Scripts -->
     <script>

@@ -93,15 +93,18 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
-
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # STATIC FILES AND IMAGE DIRECTORY
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    
+    os.path.join(BASE_DIR, 'static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'allstatic')  # Dummy value for development
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 

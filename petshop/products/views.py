@@ -5,8 +5,8 @@ from .forms import ProductForm, ProductImageForm
 
 # Home Page List Of Products
 def product_list(request):
-    products = Product.objects.filter(available=True)
-    return render(request, 'products/home-products-list.html', {'products': products})
+    products = Product.objects.all()
+    return render(request, 'products/home_products_list.html', {'products': products})
 
 
 # Products Detail pages 

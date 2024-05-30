@@ -28,3 +28,11 @@ def format_price(price):
         return f'{formatted_integer}.{decimal_part}'
     else:
         return formatted_integer
+
+
+
+# show discription just 3 words 
+@register.filter(name='first_three_words')
+def first_three_words(value):
+    words = value.split()[:3]
+    return ' '.join(words)
