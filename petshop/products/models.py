@@ -15,7 +15,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE,  verbose_name='دسته‌بندی')
     name = models.CharField(max_length=255, verbose_name='نام')
     description = models.TextField(blank=True, verbose_name='توضیحات')
-    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name='قیمت')
+    price = models.DecimalField(max_digits=10, decimal_places=0, verbose_name='قیمت')
     stock = models.PositiveIntegerField(verbose_name='موجودی') 
     available = models.BooleanField(default=True, verbose_name='موجود است/نیست') 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='تاریخ ایجاد') 
@@ -45,3 +45,11 @@ class ProductImage(models.Model):
 
     def __str__(self):
         return f'{self.product.name} Image'
+    
+    
+# tags model 
+class Tag(models.Model):
+    name = models.CharField(max_length=255, verbose_name='نام')
+
+    def __str__(self):
+        return self.name
