@@ -1,9 +1,13 @@
 from django.contrib import admin
-from .models import Category, Product, ProductImage, Tag
+from .models import Category, Product, ProductImage
 
+# adding image more than one 
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
     extra = 1
+
+
+
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -21,8 +25,4 @@ class CategoryAdmin(admin.ModelAdmin):
 class ProductImageAdmin(admin.ModelAdmin):
     list_display = ['product', 'image']
 
-@admin.register(Tag)
-class TagAdmin(admin.ModelAdmin):
-    list_display = ['name']
-    search_fields = ['name']
 
