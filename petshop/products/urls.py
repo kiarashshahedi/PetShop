@@ -18,6 +18,10 @@ urlpatterns = [
     # add products out of admin pannel 
     path('add/', views.add_product, name='add_product'),  # Add this line
 
-    
+    # categories and subcategorie
+    path('category/<slug:category_slug>/', views.category_detail, name='category_detail'),
+    path('subcategory/<slug:subcategory_slug>/', views.subcategory_detail, name='subcategory_detail'),
+    path('', views.home, name='home_product_list'),
+
     
 ]

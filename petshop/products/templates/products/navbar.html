@@ -1,294 +1,116 @@
+{% load static %}
 
 <header class="bg-white ">
 
-    <nav class="container-fluid">
-         <div class="row bg-white">
-          <!-- IMG IN NAVBAR -->
-              <div class="col-md-2 d-flex justify-content-center mt-lg-3 ">
+<nav class="container-fluid">
+        <div class="row bg-white">
+        <!-- IMG IN NAVBAR -->
+            <div class="col-md-2 d-flex justify-content-center mt-lg-3 ">
 
-                  <a class=" mt-3 " href="./index.html">
-                      <img class="img-fluid me-1" src="https://www.technolife.ir/image/static_technolife-brand.svg" alt="">
-                  </a>
-                  <a class="mt-3" href="./index.html">
-                      <img class="img-fluid me-1 " src="https://www.technolife.ir/image/static_technolife-title.svg" alt="">
+                <a class=" mt-3 " href="./index.html">
+                    <img class="img-fluid me-1" src="https://www.technolife.ir/image/static_technolife-brand.svg" alt="">
+                </a>
+                <a class="mt-3" href="./index.html">
+                    <img class="img-fluid me-1 " src="https://www.technolife.ir/image/static_technolife-title.svg" alt="">
 
-                  </a>
+                </a>
 
 
-              </div>
-              <!-- INPUT NAVBAR IN NAVBAR -->
-              <div class="col-md-5  mt-3 ">
-
-                      <div class="bg-search d-flex rounded-4 justify-content-start highlighted">
-                          <i class="bi bi-search text-secondary px-4 h3 mt-3"></i>
-                          <input 
-                              type="search" 
-                              placeholder= "محصول، برند یا دسته مورد نظرتان را جستجو کنید" 
-                              class="noborderfocus px-3 w-100 bg-search border-0  rounded-4" 
-                              value=""
-                              id="search-input">
-                      </div>
-                      <div id="search-suggestions">محبوب‌ترین سرچ‌ها</div>
-                  
-              </div>
-              <div class="overlay" id="overlay"></div>
-              <!-- BARAYE RESPONSIV -->
-              <div class="col-md-3"></div>
-              <!-- INPUT BUTTON IN NAVBAR -->
-              <div class="col-md-2 text-center  mt-3">
-                  <div class="mt-1 d-flex">
-                      <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1">ورود | ثبت نام</button>
-                      <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1"><i class="bi bi-bag-check"></i></button>
-                      
-                  </div>
-
-              </div>
-      </div>
-    </nav>
-
-    <!-- PAIIN NAVBAR -->
-  <nav>
-     <div class="container-fluid d-lg-block d-none">
-          <div class="row mt-3 ms-3">
-              <div class="col-md-1 menu-item ms-5">سگ
-                  <div class="submenu">
-                      <div class="submenu-item "> غذا گربه
-                          <div class="subsubmenu">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item"> ملزومات بهداشتی گربه
-                          <div class="subsubmenu1">
-                              <div class="subsubmenu-item">dddddd ۱</div>
-                              <div class="subsubmenu-item">غذffffffffا ۲</div>
-                              <div class="subsubmenu-item">غذgggggggا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">تشویقیو مکمل غذایی
-                          <div class="subsubmenu2">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item"> مزل
-                          <div class="subsubmenu3">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۵
-                          <div class="subsubmenu4">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۶
-                          <div class="subsubmenu5">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-
-                      <div class="submenu-item">دسته ۶
-                        <div class="subsubmenu6">
-                            <div class="subsubmenu-item">غذا ۱</div>
-                            <div class="subsubmenu-item">غذا ۲</div>
-                            <div class="subsubmenu-item">غذا ۳</div>
-                        </div>
-                    </div>
-
-                    <div class="submenu-item">دسته ۶
-                      <div class="subsubmenu7">
-                          <div class="subsubmenu-item">غذا ۱</div>
-                          <div class="subsubmenu-item">غذا ۲</div>
-                          <div class="subsubmenu-item">غذا ۳</div>
-                      </div>
-                  </div>
-
-                  <div class="submenu-item">دسته ۶
-                    <div class="subsubmenu8">
-                        <div class="subsubmenu-item">غذا ۱</div>
-                        <div class="subsubmenu-item">غذا ۲</div>
-                        <div class="subsubmenu-item">غذا ۳</div>
-                    </div>
-                </div>
-
-                <div class="submenu-item">دسته ۶
-                  <div class="subsubmenu9">
-                      <div class="subsubmenu-item">غذا ۱</div>
-                      <div class="subsubmenu-item">غذا ۲</div>
-                      <div class="subsubmenu-item">غذا ۳</div>
-                  </div>
-              </div>
-
-              <div class="submenu-item">دسته ۶
-                <div class="subsubmenu10">
-                    <div class="subsubmenu-item">غذا ۱</div>
-                    <div class="subsubmenu-item">غذا ۲</div>
-                    <div class="subsubmenu-item">غذا ۳</div>
-                </div>
             </div>
+            <!-- INPUT NAVBAR IN NAVBAR -->
+            <div class="col-md-5  mt-3 ">
 
-            <div class="submenu-item">دسته ۶
-              <div class="subsubmenu11">
-                  <div class="subsubmenu-item">غذا ۱</div>
-                  <div class="subsubmenu-item">غذا ۲</div>
-                  <div class="subsubmenu-item">غذا ۳</div>
+                    <div class="bg-search d-flex rounded-4 justify-content-start highlighted">
+                        <i class="bi bi-search text-secondary px-4 h3 mt-3"></i>
+                        <input 
+                            type="search" 
+                            placeholder= "محصول، برند یا دسته مورد نظرتان را جستجو کنید" 
+                            class="noborderfocus px-3 w-100 bg-search border-0  rounded-4" 
+                            value=""
+                            id="search-input">
+                    </div>
+                    <div id="search-suggestions">محبوب‌ترین سرچ‌ها</div>
+                
+            </div>
+            <div class="overlay" id="overlay"></div>
+            <!-- BARAYE RESPONSIV -->
+            <div class="col-md-3"></div>
+            <!-- INPUT BUTTON IN NAVBAR -->
+            <div class="col-md-2 text-center  mt-3">
+                <div class="mt-1 d-flex">
+                    <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1">ورود | ثبت نام</button>
+                    <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1"><i class="bi bi-bag-check"></i></button>
+                    
+                </div>
+
+            </div>
+    </div>
+</nav>
+
+<!-- PAIIN NAVBAR -->
+
+<!-- products/navbar.html -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          {% for category in categories %}
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ category.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                
+                {{ category.name }}
+
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ category.id }}">
+
+                {% for subcategory in category.subcategories.all %}
+
+                  <a class="dropdown-item" href="{% url 'subcategory_detail' subcategory.slug %}">{{ subcategory.name }}</a>
+                
+                  {% endfor %}
               </div>
-          </div>
-                  </div>
-              </div>
-              <div class="col-md-1 menu-item ms-5">سگ
-                  <div class="submenu">
-                      <div class="submenu-item ">دسته ۱
-                          <div class="subsubmenu">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۲
-                          <div class="subsubmenu1">
-                              <div class="subsubmenu-item">dddddd ۱</div>
-                              <div class="subsubmenu-item">غذffffffffا ۲</div>
-                              <div class="subsubmenu-item">غذgggggggا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۳
-                          <div class="subsubmenu2">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۴
-                          <div class="subsubmenu3">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۵
-                          <div class="subsubmenu4">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۶
-                          <div class="subsubmenu5">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-1 menu-item ms-5">سگ
-                  <div class="submenu">
-                      <div class="submenu-item ">دسته ۱
-                          <div class="subsubmenu">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۲
-                          <div class="subsubmenu1">
-                              <div class="subsubmenu-item">dddddd ۱</div>
-                              <div class="subsubmenu-item">غذffffffffا ۲</div>
-                              <div class="subsubmenu-item">غذgggggggا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۳
-                          <div class="subsubmenu2">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۴
-                          <div class="subsubmenu3">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۵
-                          <div class="subsubmenu4">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۶
-                          <div class="subsubmenu5">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="col-md-1 menu-item ms-5">سگ
-                  <div class="submenu">
-                      <div class="submenu-item ">دسته ۱
-                          <div class="subsubmenu">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۲
-                          <div class="subsubmenu1">
-                              <div class="subsubmenu-item">dddddd ۱</div>
-                              <div class="subsubmenu-item">غذffffffffا ۲</div>
-                              <div class="subsubmenu-item">غذgggggggا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۳
-                          <div class="subsubmenu2">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۴
-                          <div class="subsubmenu3">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۵
-                          <div class="subsubmenu4">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                      <div class="submenu-item">دسته ۶
-                          <div class="subsubmenu5">
-                              <div class="subsubmenu-item">غذا ۱</div>
-                              <div class="subsubmenu-item">غذا ۲</div>
-                              <div class="subsubmenu-item">غذا ۳</div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-     </div>
+            </li>
+            
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
   </nav>
-
   
 
-  <!-- Fixed bottom options -->
-  <div class="fixed-bottom fixed-bottom-options">
+
+
+            {% comment %} {% for category in categories %}
+                <div class="col-md-1 menu-item ms-5">{{ category.name }}
+                    <div class="submenu">
+                        {% for subcategory in category.subcategories.all %}
+                            <div class="submenu-item">
+                                <a href="{% url 'subcategory_detail' subcategory.slug %}">{{ subcategory.name }}</a>
+                                
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %} {% endcomment %}
+
+    
+{% comment %} <div class="subsubmenu">
+                                    {% for product in subcategory.products.all %}
+                                        <div class="subsubmenu-item">
+                                            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+                                        </div>
+                                    {% endfor %}
+                                </div> {% endcomment %}
+
+<!-- Fixed bottom options MOBILE -->
+<div class="fixed-bottom fixed-bottom-options">
     <div class="container-fluid">
         <div class="row text-center">
             <div class="col-3  d-md-none d-grid">
@@ -321,7 +143,7 @@
                 <span class=" text-center ">
 
                     <i class="bi bi-person-fill h3"></i>
-                  
+                
                 </span>
                 <span class=" text-colorforbuy"><small><small>پروفایل</small></small></span>
 

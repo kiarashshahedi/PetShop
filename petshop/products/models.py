@@ -1,19 +1,39 @@
 from django.db import models
+from django.utils.text import slugify
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
+
 
 #category of products
 class Category(models.Model):
-    name = models.CharField(max_length=255, verbose_name='نام')
-    description = models.TextField(blank = True)
-        
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)  
+    description = models.TextField(blank=True, null=True)
+    parent = models.ForeignKey('self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
+
     def __str__(self):
-        return self.name 
+        return self.name
+    
+
         
-        
-#product class         
+# SubCategories
+class Subcategory(models.Model):
+    name = models.CharField(max_length=200)
+    slug = models.SlugField(unique=True)
+    category = models.ForeignKey(Category, related_name='subcategories', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+
+    
+# product class         
 class Product(models.Model):
     
     category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE,  verbose_name='دسته‌بندی')
+    subcategory = models.ForeignKey(Subcategory, related_name='products', on_delete=models.CASCADE)
     name = models.CharField(max_length=255, verbose_name='نام')
+    name_in_list = models.CharField(max_length=255, verbose_name=' نام داخل لیست', default='name')
     description = models.TextField(blank=True, verbose_name='توضیحات')
     price = models.DecimalField(max_digits=10, decimal_places=0, verbose_name='قیمت')
     stock = models.PositiveIntegerField(verbose_name='موجودی') 
@@ -35,7 +55,8 @@ class Product(models.Model):
     tags = models.ManyToManyField('Tag', blank=True, verbose_name='برچسب ها برای جستجو و فیلتر')
     is_featured = models.BooleanField(default=False, verbose_name='تخفیف')
     featured_price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, verbose_name='قیمت تخفیف خورده')
-    
+    slug = models.SlugField(max_length=255, unique=True, blank=True)
+
     
     
 # product images 
