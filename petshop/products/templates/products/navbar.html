@@ -3,113 +3,86 @@
 <header class="bg-white ">
 
 <nav class="container-fluid">
-        <div class="row bg-white">
-        <!-- IMG IN NAVBAR -->
-            <div class="col-md-2 d-flex justify-content-center mt-lg-3 ">
+    <div class="row bg-white">
 
-                <a class=" mt-3 " href="./index.html">
-                    <img class="img-fluid me-1" src="https://www.technolife.ir/image/static_technolife-brand.svg" alt="">
-                </a>
-                <a class="mt-3" href="./index.html">
-                    <img class="img-fluid me-1 " src="https://www.technolife.ir/image/static_technolife-title.svg" alt="">
+        <!-- ______IMG IN NAVBAR_______ -->
+        <div class="col-md-2 d-flex justify-content-center mt-lg-3 ">
+            <a class=" mt-3 " href="./index.html">
+                <img class="img-fluid me-1" src="https://www.technolife.ir/image/static_technolife-brand.svg" alt="">
+            </a>
+            <a class="mt-3" href="./index.html">
+                <img class="img-fluid me-1 " src="https://www.technolife.ir/image/static_technolife-title.svg" alt="">
+            </a>
+        </div>
 
-                </a>
-
-
+        <!-- _______INPUT NAVBAR IN NAVBAR_______ -->
+        <div class="col-md-5  mt-3 ">
+            <div class="bg-search d-flex rounded-4 justify-content-start highlighted">
+                <i class="bi bi-search text-secondary px-4 h3 mt-3"></i>
+                <input 
+                    type="search" 
+                    placeholder= "محصول، برند یا دسته مورد نظرتان را جستجو کنید" 
+                    class="noborderfocus px-3 w-100 bg-search border-0  rounded-4" 
+                    value=""
+                    id="search-input">
             </div>
-            <!-- INPUT NAVBAR IN NAVBAR -->
-            <div class="col-md-5  mt-3 ">
+            <div id="search-suggestions">محبوب‌ترین سرچ‌ها</div>   
+        </div>
+        <div class="overlay" id="overlay"></div>
 
-                    <div class="bg-search d-flex rounded-4 justify-content-start highlighted">
-                        <i class="bi bi-search text-secondary px-4 h3 mt-3"></i>
-                        <input 
-                            type="search" 
-                            placeholder= "محصول، برند یا دسته مورد نظرتان را جستجو کنید" 
-                            class="noborderfocus px-3 w-100 bg-search border-0  rounded-4" 
-                            value=""
-                            id="search-input">
-                    </div>
-                    <div id="search-suggestions">محبوب‌ترین سرچ‌ها</div>
-                
-            </div>
-            <div class="overlay" id="overlay"></div>
-            <!-- BARAYE RESPONSIV -->
-            <div class="col-md-3"></div>
-            <!-- INPUT BUTTON IN NAVBAR -->
-            <div class="col-md-2 text-center  mt-3">
-                <div class="mt-1 d-flex">
-                    <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1">ورود | ثبت نام</button>
-                    <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1"><i class="bi bi-bag-check"></i></button>
-                    
-                </div>
+        <!-- _______BARAYE RESPONSIV_______ -->
+        <div class="col-md-3"></div>
 
+        <!-- ______INPUT BUTTON IN NAVBAR_______ -->
+        <div class="col-md-2 text-center  mt-3">
+            <div class="mt-1 d-flex">
+                <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1">ورود | ثبت نام</button>
+                <button type="button" class="btn btn-light border border-2 p-2 d-lg-block d-none mx-1"><i class="bi bi-bag-check"></i></button>                   
             </div>
+        </div>
+
     </div>
 </nav>
 
-<!-- PAIIN NAVBAR -->
 
-<!-- products/navbar.html -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
+<!-- _______PAIIN NAVBAR_______ -->
+<nav>
+    <div class="container-fluid d-lg-block d-none">
+        <div class="row mt-3 ms-3">
+            <div class="col-md-1 menu-item ms-5">
+                <ul class="menu">
 
-          {% for category in categories %}
+                    {% for animal in animal_types %}
+                        <li class="menu-item">
+                            <a href="#">{{ animal.name }}</a>
 
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown{{ category.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                
-                {{ category.name }}
+                            <ul class="submenu">
+                                {% for main_category in animal.main_categories.all %}
 
-              </a>
+                                    <li class="submenu-item">
+                                        <a href="{% url 'main_category' main_category.id %}">{{ main_category.name }}</a>                                       
+                                        <ul class="subsubmenu">
+                                            {% for sub_category in main_category.sub_categories.all %}
+                                                <li class="subsubmenu-item">
+                                                    <a href="{% url 'sub_category' sub_category.id %}">{{ sub_category.name }}</a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                {% endfor %}
+                            </ul>
 
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ category.id }}">
+                        </li>
+                    {% endfor %}
 
-                {% for subcategory in category.subcategories.all %}
-
-                  <a class="dropdown-item" href="{% url 'subcategory_detail' subcategory.slug %}">{{ subcategory.name }}</a>
-                
-                  {% endfor %}
-              </div>
-            </li>
-            
-          {% endfor %}
-        </ul>
-      </div>
+                </ul>
+            </div>
+        </div>
     </div>
-  </nav>
-  
-
-
-
-            {% comment %} {% for category in categories %}
-                <div class="col-md-1 menu-item ms-5">{{ category.name }}
-                    <div class="submenu">
-                        {% for subcategory in category.subcategories.all %}
-                            <div class="submenu-item">
-                                <a href="{% url 'subcategory_detail' subcategory.slug %}">{{ subcategory.name }}</a>
-                                
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            {% endfor %} {% endcomment %}
-
-    
-{% comment %} <div class="subsubmenu">
-                                    {% for product in subcategory.products.all %}
-                                        <div class="subsubmenu-item">
-                                            <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
-                                        </div>
-                                    {% endfor %}
-                                </div> {% endcomment %}
-
-<!-- Fixed bottom options MOBILE -->
+</nav>
+            
+<!-- ______Fixed bottom options MOBILE_________ -->
 <div class="fixed-bottom fixed-bottom-options">
     <div class="container-fluid">
         <div class="row text-center">
@@ -154,3 +127,26 @@
 
 
 </header>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var menuItems = document.querySelectorAll('.menu-item > a');
+
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                var submenu = item.nextElementSibling;
+                submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+
+        var submenuItems = document.querySelectorAll('.submenu-item > a');
+
+        submenuItems.forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                var subsubmenu = item.nextElementSibling;
+                subsubmenu.style.display = subsubmenu.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    });
+</script>

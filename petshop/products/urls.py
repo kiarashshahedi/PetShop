@@ -9,19 +9,11 @@ urlpatterns = [
     # product detail page
     path('product/<int:id>/', views.product_detail, name='product_detail'),
     
-    # category lists
-    path('categories/', views.category_list, name='category_list'),
-    
-    # category details
-    path('category/<int:id>/', views.category_detail, name='category_detail'),
-    
-    # add products out of admin pannel 
-    path('add/', views.add_product, name='add_product'),  # Add this line
+    # navbar category list
+    path('navbar/', views.navbar, name='navbar'),
 
-    # categories and subcategorie
-    path('category/<slug:category_slug>/', views.category_detail, name='category_detail'),
-    path('subcategory/<slug:subcategory_slug>/', views.subcategory_detail, name='subcategory_detail'),
-    path('', views.home, name='home_product_list'),
-
+    # main and sub Categories pages
+    path('main-category/<int:main_category_id>/', views.main_category_view, name='main_category'),
+    path('sub-category/<int:sub_category_id>/', views.sub_category_view, name='sub_category'),
     
 ]

@@ -60,7 +60,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 # adding products processors
-                'products.context_processors.categories_processor',
+                'products.context_processors.animal_types_processor',
 
             ],
         },

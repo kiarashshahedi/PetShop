@@ -1,8 +1,7 @@
-from .models import Category
+# products/context_processors.py
+from .models import SubCategory, MainCategory,AnimalType
 
-def categories_processor(request):
-    cat_categories = Category.objects.filter(name__icontains='گربه', parent__isnull=True)
-    dog_categories = Category.objects.filter(name__icontains='سگ', parent__isnull=True)
-    categories = Category.objects.all()
 
-    return {'cat_categories': cat_categories, 'dog_categories': dog_categories, 'categories': categories}
+def animal_types_processor(request):
+    animal_types = AnimalType.objects.prefetch_related('main_categories__sub_categories').all()
+    return {'animal_types': animal_types}

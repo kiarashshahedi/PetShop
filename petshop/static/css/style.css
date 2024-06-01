@@ -187,153 +187,49 @@ body.focused #search-suggestions {
     border: 1px solid #ccc;
     z-index: 1000;
     width: 200px;
+} */
+.menu-item {
+    position: relative;
 }
 
-
-
-.submenu, .subsubmenu11 {
+.submenu, .subsubmenu {
     display: none;
     position: absolute;
     top: 100%;
-    right: 10%;
+    right: 0;
     background: white;
     border: 1px solid #ccc;
     z-index: 1000;
     width: 200px;
 }
 
-
-.menu-item:hover .submenu {
+.menu-item:hover > .submenu,
+.submenu-item:hover > .subsubmenu {
     display: block;
 }
-.submenu-item {
-    position: relative;
-}
-.submenu-item .subsubmenu {
-    display: block;
-    top: 0;
-    right: 100%;
-}
 
-.submenu-item:hover .subsubmenu1 {
-    display: block;
-    top: -100%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu2 {
-    display: block;
-    top: -200%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu3 {
-    display: block;
-    top: -300%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu4 {
-    display: block;
-    top: -400%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu5 {
-    display: block;
-    top: -500%;
-    right: 100%;
-}
-
-.submenu-item:hover .subsubmenu6 {
-    display: block;
-    top: -600%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu7 {
-    display: block;
-    top: -700%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu8 {
-    display: block;
-    top: -800%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu9 {
-    display: block;
-    top: -900%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu10 {
-    display: block;
-    top: -1000%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu11 {
-    display: block;
-    top: -1100%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu12 {
-    display: block;
-    top: -1200%;
-    right: 100%;
-}
-.submenu-item, .subsubmenu-item {
-    padding: 10px;
-    cursor: pointer;
-}
-.submenu-item:hover, .subsubmenu-item:hover {
-    background: #f0f0f0;
-} */
-.menu-item {
-    position: relative;
-    list-style: none;
-    margin: 0;
-    padding: 10px;
-}
-
-.submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    border: 1px solid #ccc;
-    list-style: none;
-    margin: 0;
+.menu {
+    list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
-.menu-item:hover .submenu {
-    display: block;
+.menu > .menu-item {
+    float: left;
+    margin-right: 20px;
 }
 
-.submenu-item {
-    padding: 10px;
-    cursor: pointer;
+.submenu, .subsubmenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.submenu-item:hover {
-    background: #f0f0f0;
+.submenu > .submenu-item,
+.subsubmenu > .subsubmenu-item {
+    position: relative;
 }
+
 /* DOG & CAT  */
 .bg-Cat{
     background: linear-gradient(65deg,#ff3333,#F84F55);

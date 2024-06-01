@@ -1,15 +1,17 @@
 from django.db import models
-from django.utils.text import slugify
-from django.dispatch import receiver
-from django.db.models.signals import pre_save
+
+# animal type 
+class AnimalType(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 #category of products
-class Category(models.Model):
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)  
-    description = models.TextField(blank=True, null=True)
-    parent = models.ForeignKey('self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
+class MainCategory(models.Model):
+    name = models.CharField(max_length=100)
+    animal_type = models.ForeignKey(AnimalType, related_name='main_categories', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -17,10 +19,9 @@ class Category(models.Model):
 
         
 # SubCategories
-class Subcategory(models.Model):
-    name = models.CharField(max_length=200)
-    slug = models.SlugField(unique=True)
-    category = models.ForeignKey(Category, related_name='subcategories', on_delete=models.CASCADE)
+class SubCategory(models.Model):
+    name = models.CharField(max_length=100)
+    main_category = models.ForeignKey(MainCategory, related_name='sub_categories', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
@@ -30,8 +31,7 @@ class Subcategory(models.Model):
 # product class         
 class Product(models.Model):
     
-    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE,  verbose_name='دسته‌بندی')
-    subcategory = models.ForeignKey(Subcategory, related_name='products', on_delete=models.CASCADE)
+    sub_category = models.ForeignKey(SubCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=255, verbose_name='نام')
     name_in_list = models.CharField(max_length=255, verbose_name=' نام داخل لیست', default='name')
     description = models.TextField(blank=True, verbose_name='توضیحات')
