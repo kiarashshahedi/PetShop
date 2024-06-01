@@ -4,7 +4,85 @@
 
 {% block title %}Products{% endblock %}
 {% block body %}
-<!-- Your template content -->
+
+<!-- BANNER SLIDER  -->
+<section>
+    <div class="container-fluid mt-5 bg-white">
+        <div class="row">
+            <div class="col-12">
+                <div id="carouselExampleIndicators" class="carousel slide">
+
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+
+                    <div class="carousel-inner rounded-5">
+
+                        <a href="">
+                            <div class="carousel-item active">
+                                <img src="{% static 'img/slider1.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="carousel-item">
+                                <img src="{% static 'img/slider2.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                        <a href="">
+                            <div class="carousel-item">
+                                <img src="{% static 'img/slider3.jpg' %}" class="d-block w-100 img-fixed-height" alt="...">
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon me-5" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon ms-5" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BANNER SLIDER End -->
+
+<!-- DOG & CAT -->
+<div class="container-fluid mt-5 bg-white">
+    <div class="row ">
+
+        <div class="col-12 col-md-6  position-relative UP ">
+            <a href="">
+                <div class="">
+                    <img  class="img-fluid UP" src="{% static 'img/catproducts.jpg' %}" alt="">
+                </div>               
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 DOWN position-relative ">
+            <a href="">
+                <div class=" ">
+                    <img class="img-fluid"  src="{% static 'img/dogproducts.jpg' %}" alt="">
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<!-- DOG & CAT End-->
+
+<!-- box mahsolat -->
 
 <div class="container mt-5">
     <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
@@ -28,5 +106,29 @@
     </div>
 </div>
 
-<!-- Rest of your template content -->
+<!-- box mahsolat end-->
+
+<!-- box mahsolat -->
+
+<div class="container mt-5">
+    <div class="row d-flex ">
+        <div class="col-6 col-md-3">
+            <img class="img-fluid rounded-4" src={% static 'img/royalcanin.jpg' %} alt="">
+        </div>
+            <div class="col-6 col-md-6">
+                <div class="d-grid">
+
+                    {% comment %} <img class="img-fluid rounded-4" src={% static 'img/josra.jpg' %} alt=""> {% endcomment %}
+                    <img class="img-fluid rounded-4" src={% static 'img/celebon.jpg' %} alt="">
+                </div>
+             </div>
+        <div class="col-6 col-md-3">
+            <img class="img-fluid rounded-4" src={% static 'img/reflex.jpg' %} alt="">
+        </div>
+    </div>
+  </div>
+
+
+
+
 {% endblock %}
