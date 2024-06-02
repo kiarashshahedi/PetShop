@@ -3,6 +3,24 @@
 {% load custom_filters %}
 
 {% block title %}Products{% endblock %}
+
+{% block style %}
+<style>
+    .zoom-effect-container {
+        position: relative;
+        overflow: hidden;
+    }
+    .zoom-effect-container img {
+        transform: scale(1.6);
+        transition: transform 0.5s ease;
+    }
+    .zoom-effect-container:hover img {
+        transform: scale(2.9);
+    }
+    
+</style>
+{% endblock %}
+
 {% block body %}
 
 <!-- BANNER SLIDER  -->
@@ -82,35 +100,12 @@
 </div>
 <!-- DOG & CAT End-->
 
-<!-- box mahsolat -->
 
-<div class="container mt-5">
-    <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
-        {% for product in products %}
-            <div class="item rounded-4">
-                {% with first_image=product.images.first %}
-                    {% if first_image %}
-                        <img src="{{ first_image.image.url }}" alt="{{ product.name }}" class="img-fluid mt-3">
-                    {% endif %}
-                {% endwith %}
-                <div class="product-details">
-                    <div class="product-name">
-                        <small><small><small>{{ product.name_in_list }}</small></small></small>
-                    </div>
-                </div>
-                <button class="btn btn-success">
-                    <small>{{ product.price|format_price }}</small> تومان
-                </button>
-            </div>
-        {% endfor %}
-    </div>
-</div>
 
-<!-- box mahsolat end-->
 
-<!-- box mahsolat -->
+<!-- box brand ha  -->
 
-<div class="container mt-5">
+{% comment %} <div class="container mt-5">
     <div class="row d-flex ">
         <div class="col-6 col-md-3">
             <img class="img-fluid rounded-4" src={% static 'img/royalcanin.jpg' %} alt="">
@@ -118,7 +113,7 @@
             <div class="col-6 col-md-6">
                 <div class="d-grid">
 
-                    {% comment %} <img class="img-fluid rounded-4" src={% static 'img/josra.jpg' %} alt=""> {% endcomment %}
+                    <img class="img-fluid rounded-4" src={% static 'img/josra.jpg' %} alt="">
                     <img class="img-fluid rounded-4" src={% static 'img/celebon.jpg' %} alt="">
                 </div>
              </div>
@@ -126,9 +121,75 @@
             <img class="img-fluid rounded-4" src={% static 'img/reflex.jpg' %} alt="">
         </div>
     </div>
-  </div>
+  </div> {% endcomment %}
+<!-- box brand ha End -->
 
 
+
+<!-- Products box by them Subcategory name -->
+<div class="container mt-5">
+
+    {% for animal_type_data in animal_types_with_subcategories %}
+        {% comment %} <h1>{{ animal_type_data.animal_type.name }}</h1> {% endcomment %}
+
+        {% for subcategory_data in animal_type_data.subcategories_with_products %}
+            
+            <div class="mx-4">
+                <p class="fw-bold ">{{ subcategory_data.sub_category.name }}</p>
+            </div>
+
+            <div class="container mt-1">
+
+                <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
+                    {% for product in subcategory_data.products %}
+
+                        <div class="item rounded-4 ">
+
+                            {% with first_image=product.images.first %}
+                                {% if first_image %}
+                                <div class="zoom-effect-container">
+                                    <img src="{{ first_image.image.url }}" alt="{{ product.name }}" class="img-fluid mt-1 ">
+                                </div>
+                                {% endif %}
+                            {% endwith %}
+
+                            <div class="product-details flex-grow-1 d-flex flex-column justify-content-between">
+                                <div class="product-name">
+                                    <small><small><small>{{ product.name_in_list }}</small></small></small>
+                                </div>
+                            </div>
+                                <button class="btn btn-success mt-auto " style="">
+                                    <small><small>{{ product.price|format_price }} تومان</small></small> 
+                                </button>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+            
+            {% if forloop.counter0|divisibleby:2 %}
+                <!-- Banner Section -->
+                <div class="container mt-5">
+                    <div class="row d-flex">
+                        <div class="col-6 col-md-3">
+                            <img class="img-fluid rounded-4 " src="{% static 'img/royalcanin.jpg' %}" alt="">
+                        </div>
+                        <div class="col-6 col-md-6">
+                            <div class="d-grid">
+                                <img class="img-fluid rounded-4" src="{% static 'img/celebon.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <img class="img-fluid rounded-4" src="{% static 'img/reflex.jpg' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</div>
 
 
 {% endblock %}

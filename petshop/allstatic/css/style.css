@@ -54,140 +54,7 @@ body.focused #search-suggestions {
     display: block;
 }
 /* NAVBAR PAIIN HOVER */
-/* .menu-item {
-    position: relative;
-}
-.submenu, .subsubmenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
 
-.submenu, .subsubmenu1 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-.submenu, .subsubmenu2 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu3 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu4 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu5 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu6 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu7 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu8 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu9 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu10 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-} */
 .menu-item {
     position: relative;
 }
@@ -203,126 +70,32 @@ body.focused #search-suggestions {
     width: 200px;
 }
 
-.menu-item:hover .submenu,
-.submenu-item:hover .subsubmenu {
+.menu-item:hover > .submenu,
+.submenu-item:hover > .subsubmenu {
     display: block;
 }
 
-
-.submenu, .subsubmenu11 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-
-.menu-item:hover .submenu {
-    display: block;
+.menu > .menu-item {
+    float: left;
+    margin-right: 20px;
 }
-.submenu-item {
+
+.submenu, .subsubmenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.submenu > .submenu-item,
+.subsubmenu > .subsubmenu-item {
     position: relative;
 }
-.submenu-item .subsubmenu {
-    display: block;
-    top: 0;
-    right: 100%;
-}
-
-.submenu-item:hover .subsubmenu1 {
-    display: block;
-    top: -100%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu2 {
-    display: block;
-    top: -200%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu3 {
-    display: block;
-    top: -300%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu4 {
-    display: block;
-    top: -400%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu5 {
-    display: block;
-    top: -500%;
-    right: 100%;
-}
-
-.submenu-item:hover .subsubmenu6 {
-    display: block;
-    top: -600%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu7 {
-    display: block;
-    top: -700%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu8 {
-    display: block;
-    top: -800%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu9 {
-    display: block;
-    top: -900%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu10 {
-    display: block;
-    top: -1000%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu11 {
-    display: block;
-    top: -1100%;
-    right: 100%;
-}
-
-
-.submenu-item:hover .subsubmenu12 {
-    display: block;
-    top: -1200%;
-    right: 100%;
-}
-.submenu-item, .subsubmenu-item {
-    padding: 10px;
-    cursor: pointer;
-}
-.submenu-item:hover, .subsubmenu-item:hover {
-    background: #f0f0f0;
-}
-
-
 
 /* DOG & CAT  */
 .bg-Cat{
@@ -384,6 +157,7 @@ body.focused #search-suggestions {
 .product-image {
     width: 100%;
     height: auto;
+    max-height: 400px
   }
   .product-details {
     text-align: center;
@@ -618,4 +392,11 @@ color: white;
 
 .bg-age6:hover{
     border: 2px solid #198754;
+}
+
+
+.owl-carousel .item img {
+    width: 100%; /* عرض تصویر به اندازه کامل باکس */
+    height: auto; /* حفظ نسبت تصویر */
+    max-height: 300px; /* حداکثر ارتفاع تصویر */
 }

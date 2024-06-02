@@ -1,7 +1,7 @@
 /* FONT VAZIR ALL HTML */
 @font-face {
     font-family: 'Vazir';
-    src: url('/static/fonts/vazir.ttf') format('truetype');
+    src: url('/static/css/fonts/vazir.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -54,140 +54,7 @@ body.focused #search-suggestions {
     display: block;
 }
 /* NAVBAR PAIIN HOVER */
-/* .menu-item {
-    position: relative;
-}
-.submenu, .subsubmenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
 
-.submenu, .subsubmenu1 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-.submenu, .subsubmenu2 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu3 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu4 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu5 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu6 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-.submenu, .subsubmenu7 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu8 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu9 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-}
-
-
-
-.submenu, .subsubmenu10 {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 10%;
-    background: white;
-    border: 1px solid #ccc;
-    z-index: 1000;
-    width: 200px;
-} */
 .menu-item {
     position: relative;
 }
@@ -290,6 +157,7 @@ body.focused #search-suggestions {
 .product-image {
     width: 100%;
     height: auto;
+    max-height: 400px
   }
   .product-details {
     text-align: center;
@@ -524,4 +392,11 @@ color: white;
 
 .bg-age6:hover{
     border: 2px solid #198754;
+}
+
+
+.owl-carousel .item img {
+    width: 100%; /* عرض تصویر به اندازه کامل باکس */
+    height: auto; /* حفظ نسبت تصویر */
+    max-height: 300px; /* حداکثر ارتفاع تصویر */
 }
