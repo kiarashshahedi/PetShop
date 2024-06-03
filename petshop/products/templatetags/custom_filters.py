@@ -36,3 +36,19 @@ def format_price(price):
 def first_three_words(value):
     words = value.split()[:3]
     return ' '.join(words)
+
+
+# load banner sliders
+@register.filter
+def group_by_three(value):
+    return [value[i:i + 1] for i in range(0, len(value), 1)]
+
+@register.filter
+def add_to_list(value, item):
+    if item not in value:
+        value.append(item)
+    return value
+
+@register.filter
+def in_list(value, arg):
+    return arg in value

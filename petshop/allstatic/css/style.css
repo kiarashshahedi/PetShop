@@ -1,7 +1,7 @@
 /* FONT VAZIR ALL HTML */
 @font-face {
     font-family: 'Vazir';
-    src: url('/static/fonts/vazir.ttf') format('truetype');
+    src: url('/static/css/fonts/vazir.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

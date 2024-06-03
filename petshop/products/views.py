@@ -8,14 +8,16 @@ def product_list(request):
 
     for animal_type in animal_types:
         subcategories_with_products = []
-        main_categories = MainCategory.objects.filter(animal_type=animal_type)[:2]  # محدود کردن به 2 main category
+        main_categories = MainCategory.objects.filter(animal_type=animal_type)[:2]  # Limit to 2 main categories
         for main_category in main_categories:
-            subcategories = SubCategory.objects.filter(main_category=main_category)[:1]  # محدود کردن به 1 sub category
+            subcategories = SubCategory.objects.filter(main_category=main_category)[:1]  # Limit to 1 subcategory
             for subcategory in subcategories:
-                products = Product.objects.filter(sub_category=subcategory)[:10]  # محدود کردن تعداد محصولات به 10
+                products = Product.objects.filter(sub_category=subcategory)[:10]  # Limit products to 10
+                slider_images = get_static_slider_images()  # Fetch static slider images
                 subcategories_with_products.append({
                     'sub_category': subcategory,
-                    'products': products
+                    'products': products,
+                    'slider_images': slider_images  # Add static slider images to the context
                 })
         if subcategories_with_products:
             animal_types_with_subcategories.append({
@@ -27,6 +29,16 @@ def product_list(request):
         'animal_types_with_subcategories': animal_types_with_subcategories,
     })
 
+def get_static_slider_images():
+    # List of static image paths
+    static_images = [
+        '/bnnrimg/bnnr1.webp',
+        '/bnnrimg/bnnr2.webp',
+        '/bnnrimg/bnnr3.webp',
+        '/bnnrimg/bnnr4.webp',
+        '/bnnrimg/bnnr5.webp',
+    ]
+    return static_images
 
 # Products Detail pages 
 def product_detail(request, id):
