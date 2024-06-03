@@ -25,9 +25,9 @@
 
 <!-- BANNER SLIDER  -->
 <section>
-    <div class="container-fluid mt-5 bg-white">
+    <div class="container-fluid mt-1">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 ">
                 <div id="carouselExampleIndicators" class="carousel slide">
 
                     <div class="carousel-indicators">
@@ -36,7 +36,7 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
 
-                    <div class="carousel-inner rounded-5">
+                    <div class="carousel-inner">
 
                         <a href="">
                             <div class="carousel-item active">
@@ -77,7 +77,7 @@
 <!-- BANNER SLIDER End -->
 
 <!-- DOG & CAT -->
-<div class="container-fluid mt-5 bg-white">
+<div class="container-fluid bg-white mt-4">
     <div class="row ">
 
         <div class="col-12 col-md-6  position-relative UP ">
@@ -101,7 +101,7 @@
 <!-- DOG & CAT End-->
 
 <!-- Products box by them Subcategory name -->
-<div class="container mt-5">
+<div class="container mt-3">
     {% for animal_type_data in animal_types_with_subcategories %}
         {% comment %} <h1>{{ animal_type_data.animal_type.name }}</h1> {% endcomment %}
 
@@ -134,23 +134,33 @@
                 </div>
             </div>
 
-            <!-- Slider Section -->
-            <div class="container-fluid mt-5 bg-white">
-                <div class="row">
-
-                    <div class="owl-carousel border border-2 p-5 rounded-4 owl-theme bg-white shadow slider-big">
-                        {% for image in subcategory_data.slider_images %}
-                            <div class="item rounded-4">
-                                <div class="zoom-effect-container">
-                                    <img src="{% static image %}" alt="Slider Image" class="img-fluid mt-1 slider-img">
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
+            
         {% endfor %}
     {% endfor %}
+</div>
+
+
+<!-- 2 RED ROYALCANIN DOG-CAT -->
+<div class="container-fluid bg-white mt-4">
+    <div class="row ">
+
+        <div class="col-12 col-md-6  position-relative UP ">
+            <a href="">
+                <div class="">
+                    <img  class="img-fluid UP" src="{% static 'bnnrimg/bnnr2.webp' %}" alt="">
+                </div>               
+            </a>
+        </div>
+
+        <div class="col-12 col-md-6 DOWN position-relative ">
+            <a href="">
+                <div class=" ">
+                    <img class="img-fluid"  src="{% static 'bnnrimg/bnnr3.webp' %}" alt="">
+                </div>
+            </a>
+        </div>
+
+    </div>
 </div>
 
 
