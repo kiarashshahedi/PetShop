@@ -7,41 +7,54 @@ def product_list(request):
     animal_types = AnimalType.objects.all()
 
     for animal_type in animal_types:
-        subcategories_with_products = []
         main_categories = MainCategory.objects.filter(animal_type=animal_type)[:2]  # Limit to 2 main categories
         
         for main_category in main_categories:
-            subcategories = SubCategory.objects.filter(main_category=main_category)[:2]  # Limit to 1 subcategory
+            subcategories_with_products = []
+            subcategories = SubCategory.objects.filter(main_category=main_category)[:2]  # Limit to 2 subcategories
+
             for subcategory in subcategories:
-                products = Product.objects.filter(sub_category=subcategory)[:10]  # Limit products to 10
-                slider_images = get_static_slider_images()  # Fetch static slider images
+                products = list(Product.objects.filter(sub_category=subcategory)[:7])  # Limit products to 7
+                product_pairs = [products[i:i + 2] for i in range(0, len(products), 2)]
+
                 subcategories_with_products.append({
                     'sub_category': subcategory,
-                    'products': products,
-                    'slider_images': slider_images  # Add static slider images to the context
+                    'product_pairs': product_pairs,
+                    'slider_images_set_1': get_static_slider_images_set_1(),
+                    'slider_images_set_2': get_static_slider_images_set_2(),
                 })
-                
-        if subcategories_with_products:
-            animal_types_with_subcategories.append({
-                'animal_type': animal_type,
-                'subcategories_with_products': subcategories_with_products
-            })
-    
+
+            if subcategories_with_products:
+                animal_types_with_subcategories.append({
+                    'animal_type': animal_type,
+                    'main_category': main_category,
+                    'subcategories_with_products': subcategories_with_products
+                })
+
     return render(request, 'products/home_products_list.html', {
         'animal_types_with_subcategories': animal_types_with_subcategories,
-
     })
 
-def get_static_slider_images():
-    # List of static image paths
-    static_images = [
-        '/bnnrimg/bnnr1.webp',
-        '/bnnrimg/bnnr2.webp',
-        '/bnnrimg/bnnr3.webp',
-        '/bnnrimg/bnnr4.webp',
-        '/bnnrimg/bnnr5.webp',
+def get_static_slider_images_set_1():
+    static_images_set_1 = [
+        '/static/bnnrimg/bnnr1.webp',
+        '/static/bnnrimg/bnnr2.webp',
+        '/static/bnnrimg/bnnr3.webp',
     ]
-    return static_images
+    return static_images_set_1
+
+def get_static_slider_images_set_2():
+    static_images_set_2 = [
+        '/static/bnnrimg/bnnr4.webp',
+        '/static/bnnrimg/bnnr5.webp',
+        '/static/bnnrimg/bnnr6.webp',
+    ]
+    return static_images_set_2
+
+
+
+
+
 
 # Products Detail pages 
 def product_detail(request, id):
