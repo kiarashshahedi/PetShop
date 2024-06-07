@@ -100,6 +100,7 @@
 </div>
 <!-- DOG & CAT End-->
 
+<!-- products sliders boxes 2 by to add a banner -->
 <div class="container mt-3">
     {% for animal_type_data in animal_types_with_subcategories %}
         {% comment %} <h2>{{ animal_type_data.main_category.name }}</h2> {% endcomment %}
@@ -110,10 +111,10 @@
             </div>
 
             <div class="container mt-1">
-                <div class="owl-carousel d-flex justify-content-between mb-4">
+                <div class="owl-carousel border border-2 p-3 rounded-4 owl-theme bg-white shadow">
                     {% for product_pair in subcategory_data.product_pairs %}
                         {% for product in product_pair %}
-                            <div class="item rounded-4" style="width: 48%;">
+                            <div class="item rounded-4" style="">
                                 {% with first_image=product.images.first %}
                                     {% if first_image %}
                                         <div class="zoom-effect-container">
